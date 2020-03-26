@@ -6,7 +6,11 @@ A [Flarum](http://flarum.org) extension that integrates your forum with [highlig
 
 ### Preview
 
-![Preview](https://i.imgur.com/VRdPXaF.png)
+![Preview](https://i.imgur.com/GqV7PT9.png)
+
+### Requirements
+
+- The [flarum/bbcode](https://github.com/flarum/bbcode/) extension is necessary for this extension to work.
 
 ### Installation
 
@@ -25,5 +29,6 @@ composer update therealsujitk/flarum-ext-hljs
 ### Links
 
 - [Packagist](https://packagist.org/packages/therealsujitk/flarum-ext-hljs)
+- [Discussion Page](https://discuss.flarum.org/d/23229)
 - [GitHub](https://github.com/therealsujitk/flarum-ext-hljs)
 - [PayPal](https://paypal.me/suchitrakumar)
