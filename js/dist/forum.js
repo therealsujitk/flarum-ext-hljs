@@ -312,6 +312,7 @@ flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('therealsujit
         var theme = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('therealsujitk-hljs.theme_name');
         if (theme === null) theme = 'default';
         if (typeof document.querySelectorAll("link[href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css']")[0] != 'undefined') document.querySelectorAll("link[href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css']")[0].href = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/' + theme + '.min.css';
+        if (typeof document.querySelectorAll("link[href='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/github-gist.min.css']")[0] != 'undefined') document.querySelectorAll("link[href='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/github-gist.min.css']")[0].href = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/' + theme + '.min.css';
         Object(_helpers_hljsDefaults__WEBPACK_IMPORTED_MODULE_3__["hljsDefaults"])(theme);
       }
     }));
