@@ -132,6 +132,9 @@ export function hljsDefaults(theme) {
 	}
 
 	var x = document.getElementsByTagName('pre');
-		for(var i=0; i<x.length; ++i)
+	var y = document.getElementsByTagName('code');
+		for(var i=0; i<x.length; ++i) {
 			x[i].style = 'background: ' + background + '; color: ' + color + ';';
+			y[i].style = 'background: ' + background + '; color: ' + color + ';';
+		}
 }
