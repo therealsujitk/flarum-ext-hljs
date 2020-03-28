@@ -101,222 +101,192 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js ***!
-  \******************************************************************/
-/*! exports provided: default */
+/***/ "./src/forum/helpers/hljsDefaults.js":
+/*!*******************************************!*\
+  !*** ./src/forum/helpers/hljsDefaults.js ***!
+  \*******************************************/
+/*! exports provided: hljsDefaults */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _inheritsLoose; });
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hljsDefaults", function() { return hljsDefaults; });
+function hljsDefaults(theme) {
+  var background, color;
 
-/***/ }),
+  switch (theme) {
+    case 'a11y-dark':
+      background = '#2b2b2b';
+      color = '#f8f8f2';
+      break;
 
-/***/ "./src/forum/components/SearchGIFModal.js":
-/*!************************************************!*\
-  !*** ./src/forum/components/SearchGIFModal.js ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+    case 'a11y-light':
+      background = '#fefefe';
+      color = '#545454';
+      break;
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchGIFModal; });
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
-/* harmony import */ var flarum_components_Modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/components/Modal */ "flarum/components/Modal");
-/* harmony import */ var flarum_components_Modal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_components_Modal__WEBPACK_IMPORTED_MODULE_1__);
+    case 'agate':
+      background = '#333';
+      color = 'white';
+      break;
 
+    case 'an-old-hope':
+      background = '#1C1D21';
+      color = '#c0c5ce';
+      break;
 
-var giphyLimit = '40';
-var query = '';
-var lastResult = 0;
+    case 'androidstudio':
+      background = '#282b2e';
+      color = '#a9b7c6';
+      break;
 
-function getGiphyURL(textarea, giphyAPI) {
-  var url;
-  if (query === '') url = 'https://api.giphy.com/v1/gifs/trending?api_key=' + giphyAPI + '&limit=' + giphyLimit + '&offset=' + lastResult.toString(10);else url = 'https://api.giphy.com/v1/gifs/search?api_key=' + giphyAPI + '&q=' + query + '&limit=' + giphyLimit + '&offset=' + lastResult.toString(10);
-  fetch(url).then(function (response) {
-    return response.json();
-  }).then(function (content) {
-    var resultsLeft = document.getElementById('LeftResults');
-    var resultsRight = document.getElementById('RightResults');
-    var flag = 0;
+    case 'arduino-light':
+      background = '#FFFFFF';
+      color = '';
+      break;
 
-    var _loop = function _loop() {
-      var imgL = document.createElement('img');
-      var imgR = document.createElement('img');
-      document.getElementsByClassName('temp-text')[0].textContent = '';
-      document.getElementById('LoadMore').style.visibility = 'hidden';
-      document.getElementById('LoadMoreSpan').textContent = app.translator.trans('therealsujitk.forum.gifs.loadmore');
+    case 'arta':
+      background = '#222';
+      color = '';
+      break;
 
-      if (typeof content.data[0] === 'undefined') {
-        document.getElementsByClassName('temp-text')[0].textContent = app.translator.trans('therealsujitk.forum.gifs.noresults');
-        ++flag;
-        return "break";
-      }
+    case 'ascetic':
+      background = 'white';
+      color = 'black';
+      break;
 
-      if (typeof content.data[i] === 'undefined') {
-        ++flag;
-        return "break";
-      }
+    case 'atelier-cave-dark':
+      background = '#19171c';
+      color = '#8b8792';
+      break;
 
-      imgL.src = content.data[i].images.downsized.url;
-      imgL.alt = content.data[i].title;
-      imgL.style = 'min-width: 97.5%; width: 97.5%; border-radius: 5px; margin: 1.25%; margin-left: 0%; margin-right: 0.3125%; vertical-align: top; cursor: pointer;';
-      resultsLeft.insertAdjacentElement("beforeend", imgL);
+    case 'atelier-cave-light':
+      background = '#efecf4';
+      color = '#585260';
+      break;
 
-      imgL.onclick = function () {
-        var embed = '![Giphy - ' + imgL.alt + ']' + '(' + imgL.src + ')';
-        app.modal.close();
-        textarea.insertAtCursor(embed);
-      };
+    case 'atelier-dune-dark':
+      background = '#20201d';
+      color = '#a6a28c';
+      break;
 
-      if (typeof content.data[i + 1] === 'undefined') {
-        ++flag;
-        return "break";
-      }
+    case 'atelier-dune-light':
+      background = '#fefbec';
+      color = '#6e6b5e';
+      break;
 
-      imgR.src = content.data[i + 1].images.downsized.url;
-      imgR.alt = content.data[i + 1].title;
-      imgR.style = 'min-width: 97.5%; width: 97.5%; border-radius: 5px; margin: 1.25%; margin-left: 0.3125%; margin-right: 0%; vertical-align: top; cursor: pointer;';
-      resultsRight.insertAdjacentElement("beforeend", imgR);
+    case 'atelier-estuary-dark':
+      background = '#22221b';
+      color = '#929181';
+      break;
 
-      imgR.onclick = function () {
-        var embed = '![Giphy - ' + imgR.alt + ']' + '(' + imgR.src + ')';
-        app.modal.close();
-        textarea.insertAtCursor(embed);
-      };
-    };
+    case 'atelier-estuary-light':
+      background = '#f4f3ec';
+      color = '#5f5e4e';
+      break;
 
-    for (var i = 0; i < parseInt(giphyLimit); i += 2) {
-      var _ret = _loop();
+    case 'atelier-forest-dark':
+      background = '#1b1918';
+      color = '#a8a19f';
+      break;
 
-      if (_ret === "break") break;
-    }
+    case 'atelier-forest-light':
+      background = '#f1efee';
+      color = '#68615e';
+      break;
 
-    if (flag === 0) {
-      document.getElementById('LoadMore').style.visibility = 'visible';
-    }
-  });
-}
+    case 'atelier-heath-dark':
+      background = '#1b181b';
+      color = '#ab9bab';
+      break;
 
-var SearchGIFModal =
-/*#__PURE__*/
-function (_Modal) {
-  Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(SearchGIFModal, _Modal);
+    case 'atelier-heath-light':
+      background = '#f7f3f7';
+      color = '#695d69';
+      break;
 
-  function SearchGIFModal() {
-    return _Modal.apply(this, arguments) || this;
+    case 'atelier-lakeside-dark':
+      background = '#161b1d';
+      color = '#7ea2b4';
+      break;
+
+    case 'atelier-lakeside-light':
+      background = '#ebf8ff';
+      color = '#516d7b';
+      break;
+
+    case 'atelier-plateau-dark':
+      background = '#1b1818';
+      color = '#8a8585';
+      break;
+
+    case 'atelier-plateau-light':
+      background = '#f4ecec';
+      color = '#585050';
+      break;
+
+    case 'atelier-savanna-dark':
+      background = '#171c19';
+      color = '#87928a';
+      break;
+
+    case 'atelier-savanna-light':
+      background = '#ecf4ee';
+      color = '#526057';
+      break;
+
+    case 'atelier-seaside-dark':
+      background = '#131513';
+      color = '#8ca68c';
+      break;
+
+    case 'atelier-seaside-light':
+      background = '#f4fbf4';
+      color = '#5e6e5e';
+      break;
+
+    case 'atelier-sulphurpool-dark':
+      background = '#202746';
+      color = '#979db4';
+      break;
+
+    case 'atelier-sulphurpool-light':
+      background = '#f5f7ff';
+      color = '#5e6687';
+      break;
+
+    case 'atom-one-dark-reasonable':
+      background = '#282c34';
+      color = '#abb2bf';
+      break;
+
+    case 'atom-one-dark':
+      background = '#282c34';
+      color = '#abb2bf';
+      break;
+
+    case 'atom-one-light':
+      background = '#fafafa';
+      color = '#383a42';
+      break;
+
+    default:
+      background = '#F0F0F0';
+      color = '';
   }
 
-  var _proto = SearchGIFModal.prototype;
+  var x = document.getElementsByTagName('pre');
 
-  _proto.className = function className() {
-    return '';
-  };
+  for (var i = 0; i < x.length; ++i) {
+    x[i].style = 'background: ' + background + ';';
+  }
 
-  _proto.title = function title() {
-    return app.translator.trans('therealsujitk.forum.gifs.title');
-  };
+  x = document.getElementsByTagName('code');
 
-  _proto.content = function content() {
-    var _this = this;
-
-    return m('.Modal-body', {
-      config: function config(content, isInitialized) {
-        if (!isInitialized) {
-          document.getElementsByClassName('temp-text')[0].textContent = app.translator.trans('therealsujitk.forum.gifs.loading');
-          var textarea = _this.props.textArea;
-          var giphyAPI = app.forum.attribute('therealsujitk-gifs.giphy_api_key');
-          query = document.getElementById('GIFSearchBar').value.trim();
-          getGiphyURL(textarea, giphyAPI);
-        }
-      }
-    }, m('span[style = position: absolute; left: 50%; top: 200px; transform: translate(-50%, -50%);]', {
-      id: 'flarum-loading',
-      "class": 'temp-text'
-    }), m('div', [m('table[style = vertical-align: top; width: 100%;]', [m('td', [m('form[style = margin-right: 1.25%;]', {
-      "class": 'Search-input',
-      onsubmit: function onsubmit() {
-        return false;
-      },
-      onkeyup: function onkeyup() {
-        if (event.keyCode === 13) {
-          lastResult = 0;
-          document.getElementById('LeftResults').innerHTML = '';
-          document.getElementById('RightResults').innerHTML = '';
-          document.getElementById('LeftResults').scrollTop = 0;
-          document.getElementsByClassName('temp-text')[0].textContent = app.translator.trans('therealsujitk.forum.gifs.loading');
-          document.getElementById('LoadMore').style.visibility = 'hidden';
-          var textarea = _this.props.textArea;
-          var giphyAPI = app.forum.attribute('therealsujitk-gifs.giphy_api_key');
-          query = document.getElementById('GIFSearchBar').value.trim();
-          getGiphyURL(textarea, giphyAPI);
-        }
-      }
-    }, [m('input[style = width: 100%;]', {
-      id: 'GIFSearchBar',
-      "class": 'FormControl',
-      type: 'search',
-      autocomplete: 'off',
-      placeholder: app.translator.trans('therealsujitk.forum.gifs.searchbar')
-    })])]), m('td', [m('button[style = margin-left: 1.25%; width: 100%;]', {
-      "class": 'Button Button--primary hasIcon',
-      itemclassname: 'App-primaryControl',
-      type: 'button',
-      title: app.translator.trans('therealsujitk.forum.gifs.search'),
-      onclick: function onclick() {
-        lastResult = 0;
-        document.getElementById('LeftResults').innerHTML = '';
-        document.getElementById('RightResults').innerHTML = '';
-        document.getElementById('LeftResults').scrollTop = 0;
-        document.getElementsByClassName('temp-text')[0].textContent = app.translator.trans('therealsujitk.forum.gifs.loading');
-        document.getElementById('LoadMore').style.visibility = 'hidden';
-        var textarea = _this.props.textArea;
-        var giphyAPI = app.forum.attribute('therealsujitk-gifs.giphy_api_key');
-        query = document.getElementById('GIFSearchBar').value.trim();
-        getGiphyURL(textarea, giphyAPI);
-      }
-    }, [m('span', {
-      "class": 'Button-label'
-    }, app.translator.trans('therealsujitk.forum.gifs.search'))])])])]), m('div[style = margin-top: 10px; margin-bottom: 10px; min-height: 45vh; height: 45vh; overflow: auto;]', [m('table', {
-      width: '100%'
-    }, [m('td', {
-      id: 'LeftResults',
-      width: '50%'
-    }), m('td', {
-      id: 'RightResults',
-      width: '50%'
-    })]), m('button[style = position: relative; left: 50%; transform: translate(-50%, 0%); margin-top: 10px; visibility: hidden;]', {
-      id: 'LoadMore',
-      "class": 'Button',
-      type: 'button',
-      title: app.translator.trans('therealsujitk.forum.gifs.loadmore'),
-      onclick: function onclick() {
-        lastResult += parseInt(giphyLimit);
-        document.getElementById('LoadMoreSpan').textContent = app.translator.trans('therealsujitk.forum.gifs.loading');
-        var textarea = _this.props.textArea;
-        var giphyAPI = app.forum.attribute('therealsujitk-gifs.giphy_api_key');
-        getGiphyURL(textarea, giphyAPI);
-      }
-    }, [m('span', {
-      id: 'LoadMoreSpan',
-      "class": 'Button-label'
-    }, app.translator.trans('therealsujitk.forum.gifs.loadmore'))])]), m('div[style = padding-top: 10px; padding-bottom: 30px;]', [m('img[style = float: right;]', {
-      src: app.forum.attribute('baseUrl') + '/assets/extensions/therealsujitk-gifs/powered_by_giphy.svg'
-    })]));
-  };
-
-  return SearchGIFModal;
-}(flarum_components_Modal__WEBPACK_IMPORTED_MODULE_1___default.a);
-
-
+  for (var i = 0; i < x.length; ++i) {
+    x[i].style = 'background: ' + background + '; color: ' + color + ';';
+  }
+}
 
 /***/ }),
 
@@ -333,61 +303,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_extend__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/app */ "flarum/app");
 /* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_app__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var flarum_Component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flarum/Component */ "flarum/Component");
-/* harmony import */ var flarum_Component__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_Component__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var flarum_components_TextEditor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! flarum/components/TextEditor */ "flarum/components/TextEditor");
-/* harmony import */ var flarum_components_TextEditor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(flarum_components_TextEditor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_SearchGIFModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/SearchGIFModal */ "./src/forum/components/SearchGIFModal.js");
+/* harmony import */ var flarum_components_CommentPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flarum/components/CommentPost */ "flarum/components/CommentPost");
+/* harmony import */ var flarum_components_CommentPost__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_components_CommentPost__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _helpers_hljsDefaults__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers/hljsDefaults */ "./src/forum/helpers/hljsDefaults.js");
 
 
 
 
+var checkhljs = 1;
+flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('therealsujitk/flarum-ext-hljs', function () {
+  Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_CommentPost__WEBPACK_IMPORTED_MODULE_2___default.a.prototype, 'headerItems', function (items) {
+    items.add('therealsujitk-hljs', m('null', {
+      id: 'therealsujitk-hljs',
+      config: function config() {
+        var hljsTheme = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('therealsujitk-hljs.theme_name');
+        if (hljsTheme === null) hljsTheme = 'default';
 
-flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('therealsujitk/flarum-ext-gifs', function () {
-  Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_TextEditor__WEBPACK_IMPORTED_MODULE_3___default.a.prototype, 'toolbarItems', function (items) {
-    var _this = this;
+        while (checkhljs) {
+          if (typeof document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0] != 'undefined') {
+            document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0].href = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/' + hljsTheme + '.min.css';
+            break;
+          } else if (typeof document.querySelectorAll("link[href*='cdn.jsdelivr.net/gh/highlightjs/']")[0] != 'undefined') {
+            document.querySelectorAll("link[href*='cdn.jsdelivr.net/gh/highlightjs/']")[0].href = '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/' + hljsTheme + '.min.css';
+            break;
+          }
+        }
 
-    items.add('therealsujitk-gifs', m('button', {
-      type: 'buton',
-      "class": 'Button Button--icon Button--link hasIcon',
-      title: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('therealsujitk.forum.gifs.title'),
-      onclick: function onclick() {
-        flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.modal.show(new _components_SearchGIFModal__WEBPACK_IMPORTED_MODULE_4__["default"]({
-          textArea: _this
-        }));
+        if (checkhljs) if (document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0].href === '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/' + hljsTheme + '.min.css') checkhljs = 0;
+        Object(_helpers_hljsDefaults__WEBPACK_IMPORTED_MODULE_3__["hljsDefaults"])(hljsTheme);
       }
-    }, [m('svg', {
-      "class": 'fas fa-this-icon-does-not-exist',
-      xmlns: 'http://www.w3.org/2000/svg',
-      xlink: 'http://www.w3.org/1999/xlink',
-      width: '16pt',
-      height: '7pt',
-      viewBox: '0 0 16 7',
-      version: '1.1'
-    }, [m('g', {
-      id: 'surface1'
-    }, [m('path[fill = currentColor]', {
-      d: 'M 0.78125 7.042969 C 0.496094 6.933594 0.265625 6.738281 0.132812 6.480469 L 0 6.234375 L 0 0.875 L 0.132812 0.625 C 0.277344 0.355469 0.558594 0.128906 0.847656 0.0429688 C 0.957031 0.015625 1.71875 0 2.917969 0.0078125 L 4.808594 0.0234375 L 5.050781 0.15625 C 5.21875 0.246094 5.332031 0.355469 5.425781 0.511719 C 5.597656 0.800781 5.648438 0.992188 5.648438 1.410156 L 5.648438 1.753906 L 1.65625 1.753906 L 1.65625 5.355469 L 3.96875 5.355469 L 3.96875 3.554688 L 5.648438 3.554688 L 5.648438 4.800781 C 5.648438 5.484375 5.628906 6.117188 5.605469 6.207031 C 5.523438 6.527344 5.308594 6.808594 5.050781 6.953125 L 4.808594 7.085938 L 2.878906 7.09375 C 1.339844 7.105469 0.917969 7.09375 0.78125 7.042969 Z M 0.78125 7.042969 '
-    }), m('path[fill = currentColor]', {
-      d: 'M 7.371094 3.554688 L 7.371094 0 L 9.050781 0 L 9.050781 7.109375 L 7.371094 7.109375 Z M 7.371094 3.554688 '
-    }), m('path[fill = currentColor]', {
-      d: 'M 10.773438 3.554688 L 10.773438 0 L 15.855469 0 L 15.855469 1.753906 L 12.453125 1.753906 L 12.453125 2.988281 L 14.722656 2.988281 L 14.722656 4.742188 L 12.453125 4.742188 L 12.453125 7.109375 L 10.773438 7.109375 Z M 10.773438 3.554688 '
-    })])]), m('span', {
-      "class": 'Button-label'
-    }, flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('therealsujitk.forum.gifs.label'))]), 10);
+    }));
   });
 });
-
-/***/ }),
-
-/***/ "flarum/Component":
-/*!**************************************************!*\
-  !*** external "flarum.core.compat['Component']" ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = flarum.core.compat['Component'];
 
 /***/ }),
 
@@ -402,25 +349,14 @@ module.exports = flarum.core.compat['app'];
 
 /***/ }),
 
-/***/ "flarum/components/Modal":
-/*!*********************************************************!*\
-  !*** external "flarum.core.compat['components/Modal']" ***!
-  \*********************************************************/
+/***/ "flarum/components/CommentPost":
+/*!***************************************************************!*\
+  !*** external "flarum.core.compat['components/CommentPost']" ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = flarum.core.compat['components/Modal'];
-
-/***/ }),
-
-/***/ "flarum/components/TextEditor":
-/*!**************************************************************!*\
-  !*** external "flarum.core.compat['components/TextEditor']" ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = flarum.core.compat['components/TextEditor'];
+module.exports = flarum.core.compat['components/CommentPost'];
 
 /***/ }),
 

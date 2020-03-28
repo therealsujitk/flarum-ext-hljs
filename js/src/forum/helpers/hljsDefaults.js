@@ -24,11 +24,11 @@ export function hljsDefaults(theme) {
 			break;
 		case 'arduino-light':
 			background = '#FFFFFF';
-			color = 'black';
+			color = '';
 			break;
 		case 'arta':
 			background = '#222';
-			color = 'black';
+			color = '';
 			break;
 		case 'ascetic':
 			background = 'white';
@@ -128,13 +128,14 @@ export function hljsDefaults(theme) {
 			break;
 		default:
 			background = '#F0F0F0';
-			color = 'black';
+			color = '';
 	}
 
 	var x = document.getElementsByTagName('pre');
-	var y = document.getElementsByTagName('code');
-		for(var i=0; i<x.length; ++i) {
-			x[i].style = 'background: ' + background + '; color: ' + color + ';';
-			y[i].style = 'background: ' + background + '; color: ' + color + ';';
-		}
+	for(var i=0; i<x.length; ++i)
+		x[i].style = 'background: ' + background + ';';
+
+	x = document.getElementsByTagName('code');
+	for(var i=0; i<x.length; ++i)
+		x[i].style = 'background: ' + background + '; color: ' + color + ';';
 }

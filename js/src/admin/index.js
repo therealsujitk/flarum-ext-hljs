@@ -1,6 +1,6 @@
 import app from 'flarum/app';
-import GIFsSettingsModal from './components/GIFsSettingsModal';
+import hljsSettingsModal from './components/hljsSettingsModal';
 
-app.initializers.add('therealsujitk/flarum-ext-gifs', () => {
-	app.extensionSettings['therealsujitk-gifs'] = () => app.modal.show(new GIFsSettingsModal());
+app.initializers.add('therealsujitk/flarum-ext-hljs', () => {
+	app.extensionSettings['therealsujitk-hljs'] = () => app.modal.show(new hljsSettingsModal());
 });
