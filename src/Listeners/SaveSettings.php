@@ -1,6 +1,6 @@
 <?php
 
-namespace Therealsujitk\hljs\Listeners;
+namespace Therealsujitk\Hljs\Listeners;
 
 use Flarum\Api\Serializer\UserSerializer;
 use Flarum\Api\Event\Serializing;
