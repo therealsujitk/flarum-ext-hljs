@@ -14,25 +14,26 @@ app.initializers.add('therealsujitk/flarum-ext-hljs', () => {
 				config: () => {
 					var hljsTheme = app.forum.attribute('therealsujitk-hljs.theme_name');
 
-					if(hljsTheme === null)
+					if(hljsTheme === null || hljsTheme === "")
 						hljsTheme = 'default';
 					
 					var hljs = setInterval(function() {
 						if(flag) {
 							if(typeof document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0] != 'undefined') {
-								document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0].href = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/' + hljsTheme + '.min.css';
+								document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0].href = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/' + hljsTheme + '.min.css';
 								flag = 0;
 								clearInterval(hljs);
 							}
 							else if(typeof document.querySelectorAll("link[href*='cdn.jsdelivr.net/gh/highlightjs/']")[0] != 'undefined') {
-								document.querySelectorAll("link[href*='cdn.jsdelivr.net/gh/highlightjs/']")[0].href = '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/' + hljsTheme + '.min.css';
+								document.querySelectorAll("link[href*='cdn.jsdelivr.net/gh/highlightjs/']")[0].href = '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/' + hljsTheme + '.min.css';
 								flag = 0;
 								clearInterval(hljs);
 							}
 						}
 					}, 500);
 
-					hljsDefaults(hljsTheme);
+					let baseUrl = app.forum.attribute('baseUrl');
+					hljsDefaults(hljsTheme, baseUrl);
 				}
 			})
 		)

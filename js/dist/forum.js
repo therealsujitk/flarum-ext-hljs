@@ -1,2 +1,422 @@
-module.exports=function(e){var a={};function r(t){if(a[t])return a[t].exports;var l=a[t]={i:t,l:!1,exports:{}};return e[t].call(l.exports,l,l.exports,r),l.l=!0,l.exports}return r.m=e,r.c=a,r.d=function(e,a,t){r.o(e,a)||Object.defineProperty(e,a,{enumerable:!0,get:t})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,a){if(1&a&&(e=r(e)),8&a)return e;if(4&a&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(r.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&a&&"string"!=typeof e)for(var l in e)r.d(t,l,function(a){return e[a]}.bind(null,l));return t},r.n=function(e){var a=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(a,"a",a),a},r.o=function(e,a){return Object.prototype.hasOwnProperty.call(e,a)},r.p="",r(r.s=6)}([function(e,a){e.exports=flarum.core.compat.app},function(e,a){e.exports=flarum.core.compat.extend},function(e,a){e.exports=flarum.core.compat["components/CommentPost"]},,,,function(e,a,r){"use strict";r.r(a);var t=r(1),l=r(0),c=r.n(l),n=r(2),i=r.n(n);var o=1;c.a.initializers.add("therealsujitk/flarum-ext-hljs",(function(){Object(t.extend)(i.a.prototype,"headerItems",(function(e){e.add("therealsujitk-hljs",m("null",{id:"therealsujitk-hljs",config:function(){var e=c.a.forum.attribute("therealsujitk-hljs.theme_name");null===e&&(e="default");var a=setInterval((function(){o&&(void 0!==document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0]?(document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0].href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/"+e+".min.css",o=0,clearInterval(a)):void 0!==document.querySelectorAll("link[href*='cdn.jsdelivr.net/gh/highlightjs/']")[0]&&(document.querySelectorAll("link[href*='cdn.jsdelivr.net/gh/highlightjs/']")[0].href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/"+e+".min.css",o=0,clearInterval(a)))}),500);!function(e){var a,r;switch(e){case"a11y-dark":a="#2b2b2b",r="#f8f8f2";break;case"a11y-light":a="#fefefe",r="#545454";break;case"agate":a="#333",r="white";break;case"an-old-hope":a="#1C1D21",r="#c0c5ce";break;case"androidstudio":a="#282b2e",r="#a9b7c6";break;case"arduino-light":a="#FFFFFF",r="";break;case"arta":a="#222",r="";break;case"ascetic":a="white",r="black";break;case"atelier-cave-dark":a="#19171c",r="#8b8792";break;case"atelier-cave-light":a="#efecf4",r="#585260";break;case"atelier-dune-dark":a="#20201d",r="#a6a28c";break;case"atelier-dune-light":a="#fefbec",r="#6e6b5e";break;case"atelier-estuary-dark":a="#22221b",r="#929181";break;case"atelier-estuary-light":a="#f4f3ec",r="#5f5e4e";break;case"atelier-forest-dark":a="#1b1918",r="#a8a19f";break;case"atelier-forest-light":a="#f1efee",r="#68615e";break;case"atelier-heath-dark":a="#1b181b",r="#ab9bab";break;case"atelier-heath-light":a="#f7f3f7",r="#695d69";break;case"atelier-lakeside-dark":a="#161b1d",r="#7ea2b4";break;case"atelier-lakeside-light":a="#ebf8ff",r="#516d7b";break;case"atelier-plateau-dark":a="#1b1818",r="#8a8585";break;case"atelier-plateau-light":a="#f4ecec",r="#585050";break;case"atelier-savanna-dark":a="#171c19",r="#87928a";break;case"atelier-savanna-light":a="#ecf4ee",r="#526057";break;case"atelier-seaside-dark":a="#131513",r="#8ca68c";break;case"atelier-seaside-light":a="#f4fbf4",r="#5e6e5e";break;case"atelier-sulphurpool-dark":a="#202746",r="#979db4";break;case"atelier-sulphurpool-light":a="#f5f7ff",r="#5e6687";break;case"atom-one-dark-reasonable":case"atom-one-dark":a="#282c34",r="#abb2bf";break;case"atom-one-light":a="#fafafa",r="#383a42";break;default:a="#F0F0F0",r=""}for(var t=document.getElementsByTagName("pre"),l=0;l<t.length;++l)t[l].style="background: "+a+";";for(t=document.getElementsByTagName("code"),l=0;l<t.length;++l)t[l].style="background: "+a+"; color: "+r+";"}(e)}}))}))}))}]);
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./forum.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./forum.js":
+/*!******************!*\
+  !*** ./forum.js ***!
+  \******************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_forum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/forum */ "./src/forum/index.js");
+/* empty/unused harmony star reexport */
+
+/***/ }),
+
+/***/ "./src/forum/helpers/hljsDefaults.js":
+/*!*******************************************!*\
+  !*** ./src/forum/helpers/hljsDefaults.js ***!
+  \*******************************************/
+/*! exports provided: hljsDefaults */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hljsDefaults", function() { return hljsDefaults; });
+function hljsDefaults(theme, baseUrl) {
+  var background, color;
+
+  switch (theme) {
+    case 'a11y-dark':
+      background = '#2b2b2b';
+      color = '#f8f8f2';
+      break;
+
+    case 'a11y-light':
+      background = '#fefefe';
+      color = '#545454';
+      break;
+
+    case 'agate':
+      background = '#333';
+      color = '#fff';
+      break;
+
+    case 'an-old-hope':
+      background = '#1c1d21';
+      color = '#c0c5ce';
+      break;
+
+    case 'androidstudio':
+      background = '#282b2e';
+      color = '#a9b7c6';
+      break;
+
+    case 'arduino-light':
+      background = '#fff';
+      color = '';
+      break;
+
+    case 'arta':
+      background = '#222';
+      color = '';
+      break;
+
+    case 'ascetic':
+      background = '#fff';
+      color = '#000';
+      break;
+
+    case 'atelier-cave-dark':
+      background = '#19171c';
+      color = '#8b8792';
+      break;
+
+    case 'atelier-cave-light':
+      background = '#efecf4';
+      color = '#585260';
+      break;
+
+    case 'atelier-dune-dark':
+      background = '#20201d';
+      color = '#a6a28c';
+      break;
+
+    case 'atelier-dune-light':
+      background = '#fefbec';
+      color = '#6e6b5e';
+      break;
+
+    case 'atelier-estuary-dark':
+      background = '#22221b';
+      color = '#929181';
+      break;
+
+    case 'atelier-estuary-light':
+      background = '#f4f3ec';
+      color = '#5f5e4e';
+      break;
+
+    case 'atelier-forest-dark':
+      background = '#1b1918';
+      color = '#a8a19f';
+      break;
+
+    case 'atelier-forest-light':
+      background = '#f1efee';
+      color = '#68615e';
+      break;
+
+    case 'atelier-heath-dark':
+      background = '#1b181b';
+      color = '#ab9bab';
+      break;
+
+    case 'atelier-heath-light':
+      background = '#f7f3f7';
+      color = '#695d69';
+      break;
+
+    case 'atelier-lakeside-dark':
+      background = '#161b1d';
+      color = '#7ea2b4';
+      break;
+
+    case 'atelier-lakeside-light':
+      background = '#ebf8ff';
+      color = '#516d7b';
+      break;
+
+    case 'atelier-plateau-dark':
+      background = '#1b1818';
+      color = '#8a8585';
+      break;
+
+    case 'atelier-plateau-light':
+      background = '#f4ecec';
+      color = '#585050';
+      break;
+
+    case 'atelier-savanna-dark':
+      background = '#171c19';
+      color = '#87928a';
+      break;
+
+    case 'atelier-savanna-light':
+      background = '#ecf4ee';
+      color = '#526057';
+      break;
+
+    case 'atelier-seaside-dark':
+      background = '#131513';
+      color = '#8ca68c';
+      break;
+
+    case 'atelier-seaside-light':
+      background = '#f4fbf4';
+      color = '#5e6e5e';
+      break;
+
+    case 'atelier-sulphurpool-dark':
+      background = '#202746';
+      color = '#979db4';
+      break;
+
+    case 'atelier-sulphurpool-light':
+      background = '#f5f7ff';
+      color = '#5e6687';
+      break;
+
+    case 'atom-one-dark-reasonable':
+      background = '#282c34';
+      color = '#abb2bf';
+      break;
+
+    case 'atom-one-dark':
+      background = '#282c34';
+      color = '#abb2bf';
+      break;
+
+    case 'atom-one-light':
+      background = '#fafafa';
+      color = '#383a42';
+      break;
+
+    case 'brown-paper':
+      background = 'url(' + baseUrl + '/assets/extensions/therealsujitk-hljs/brown-papersq.png)';
+      color = '#363c69';
+      break;
+
+    case 'codepen-embed':
+      background = '#222';
+      color = '#fff';
+      break;
+
+    case 'color-brewer':
+      background = '#fff';
+      color = '#000';
+      break;
+
+    case 'darcula':
+      background = '#2b2b2b';
+      color = '#bababa';
+      break;
+
+    case 'dark':
+      background = '#444';
+      color = '#ddd';
+      break;
+
+    case 'docco':
+      background = '#f8f8ff';
+      color = '#000';
+      break;
+
+    case 'dracula':
+      background = '#282a36';
+      color = '#f8f8f2';
+      break;
+
+    case 'far':
+      background = '#000080';
+      color = '#0ff';
+      break;
+
+    case 'foundation':
+      background = '#eee';
+      color = '#000';
+      break;
+
+    default:
+      background = '#f0f0f0';
+      color = '#444';
+  }
+
+  var x = document.getElementsByTagName('pre');
+
+  for (var i = 0; i < x.length; ++i) {
+    x[i].style = 'background: ' + background + ';';
+  }
+
+  x = document.getElementsByTagName('code');
+
+  for (var i = 0; i < x.length; ++i) {
+    x[i].style = 'background: ' + background + '; color: ' + color + ';';
+  }
+}
+
+/***/ }),
+
+/***/ "./src/forum/index.js":
+/*!****************************!*\
+  !*** ./src/forum/index.js ***!
+  \****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flarum/extend */ "flarum/extend");
+/* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_extend__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/app */ "flarum/app");
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_app__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var flarum_components_CommentPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flarum/components/CommentPost */ "flarum/components/CommentPost");
+/* harmony import */ var flarum_components_CommentPost__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_components_CommentPost__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _helpers_hljsDefaults__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers/hljsDefaults */ "./src/forum/helpers/hljsDefaults.js");
+
+
+
+
+var flag = 1;
+flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('therealsujitk/flarum-ext-hljs', function () {
+  Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_CommentPost__WEBPACK_IMPORTED_MODULE_2___default.a.prototype, 'headerItems', function (items) {
+    items.add('therealsujitk-hljs', m('null', {
+      id: 'therealsujitk-hljs',
+      config: function config() {
+        var hljsTheme = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('therealsujitk-hljs.theme_name');
+        if (hljsTheme === null || hljsTheme === "") hljsTheme = 'default';
+        var hljs = setInterval(function () {
+          if (flag) {
+            if (typeof document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0] != 'undefined') {
+              document.querySelectorAll("link[href*='cdnjs.cloudflare.com/ajax/libs/highlight.js/']")[0].href = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/' + hljsTheme + '.min.css';
+              flag = 0;
+              clearInterval(hljs);
+            } else if (typeof document.querySelectorAll("link[href*='cdn.jsdelivr.net/gh/highlightjs/']")[0] != 'undefined') {
+              document.querySelectorAll("link[href*='cdn.jsdelivr.net/gh/highlightjs/']")[0].href = '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/' + hljsTheme + '.min.css';
+              flag = 0;
+              clearInterval(hljs);
+            }
+          }
+        }, 500);
+        var baseUrl = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('baseUrl');
+        Object(_helpers_hljsDefaults__WEBPACK_IMPORTED_MODULE_3__["hljsDefaults"])(hljsTheme, baseUrl);
+      }
+    }));
+  });
+});
+
+/***/ }),
+
+/***/ "flarum/app":
+/*!********************************************!*\
+  !*** external "flarum.core.compat['app']" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['app'];
+
+/***/ }),
+
+/***/ "flarum/components/CommentPost":
+/*!***************************************************************!*\
+  !*** external "flarum.core.compat['components/CommentPost']" ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/CommentPost'];
+
+/***/ }),
+
+/***/ "flarum/extend":
+/*!***********************************************!*\
+  !*** external "flarum.core.compat['extend']" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['extend'];
+
+/***/ })
+
+/******/ });
 //# sourceMappingURL=forum.js.map

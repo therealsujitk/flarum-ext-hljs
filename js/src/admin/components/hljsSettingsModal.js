@@ -49,12 +49,20 @@ export default class hljsSettingsModal extends SettingsModal {
 					m('option', {value: 'atom-one-dark-reasonable'}, 'Atom One Dark Reasonable'),
 					m('option', {value: 'atom-one-dark'}, 'Atom One Dark'),
 					m('option', {value: 'atom-one-light'}, 'Atom One Light'),
-					
+					m('option', {value: 'brown-paper'}, 'Brown Paper'),
+					m('option', {value: 'codepen-embed'}, 'Codepen Embed'),
+					m('option', {value: 'color-brewer'}, 'Color Brewer'),
+					m('option', {value: 'darcula'}, 'Darcula'),
+					m('option', {value: 'dark'}, 'Dark'),
+					m('option', {value: 'docco'}, 'Docco'),
+					m('option', {value: 'dracula'}, 'Dracula'),
+					m('option', {value: 'far'}, 'Far'),
+					m('option', {value: 'foundation'}, 'Foundation'),
 				]),
 				m('hr'), m('div', [
-					m('p[style = display: inline;]', app.translator.trans('therealsujitk.admin.about.stringA')), m('a', { href: 'https://github.com/therealsujitk', target: '_blank' }, '@therealsujitk'), 
+					m('p[style = display: inline;]', app.translator.trans('therealsujitk.admin.about.stringA')), m('a', { href: 'https://therealsuji.tk', target: '_blank' }, '@therealsujitk'), 
 					m('br'),
-					m('p[style = display: inline;]', app.translator.trans('therealsujitk.admin.about.stringB')), m('a', { href: 'https://paypal.me/suchitrakumar', target: '_blank' }, 'PayPal')
+					m('p[style = display: inline;]', app.translator.trans('therealsujitk.admin.about.stringB')), m('a', { href: 'https://therealsuji.tk/donate', target: '_blank' }, 'PayPal')
 				])
 			])
     	];

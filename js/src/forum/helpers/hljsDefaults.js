@@ -1,4 +1,4 @@
-export function hljsDefaults(theme) {
+export function hljsDefaults(theme, baseUrl) {
 	var background, color;
 
 	switch(theme){
@@ -12,10 +12,10 @@ export function hljsDefaults(theme) {
 			break;
 		case 'agate':
 			background = '#333';
-			color = 'white';
+			color = '#fff';
 			break;
 		case 'an-old-hope':
-			background = '#1C1D21';
+			background = '#1c1d21';
 			color = '#c0c5ce';
 			break;
 		case 'androidstudio':
@@ -23,7 +23,7 @@ export function hljsDefaults(theme) {
 			color = '#a9b7c6';
 			break;
 		case 'arduino-light':
-			background = '#FFFFFF';
+			background = '#fff';
 			color = '';
 			break;
 		case 'arta':
@@ -31,8 +31,8 @@ export function hljsDefaults(theme) {
 			color = '';
 			break;
 		case 'ascetic':
-			background = 'white';
-			color = 'black';
+			background = '#fff';
+			color = '#000';
 			break;
 		case 'atelier-cave-dark':
 			background = '#19171c';
@@ -126,9 +126,45 @@ export function hljsDefaults(theme) {
 			background = '#fafafa';
 			color = '#383a42';
 			break;
+		case 'brown-paper':
+			background = 'url(' + baseUrl + '/assets/extensions/therealsujitk-hljs/brown-papersq.png)';
+			color = '#363c69';
+			break;
+		case 'codepen-embed':
+			background = '#222';
+			color = '#fff';
+			break;
+		case 'color-brewer':
+			background = '#fff';
+			color = '#000';
+			break;
+		case 'darcula':
+			background = '#2b2b2b';
+			color = '#bababa';
+			break;
+		case 'dark':
+			background = '#444';
+			color = '#ddd';
+			break;
+		case 'docco':
+			background = '#f8f8ff';
+			color = '#000';
+			break;
+		case 'dracula':
+			background = '#282a36';
+			color = '#f8f8f2';
+			break;
+		case 'far':
+			background = '#000080';
+			color = '#0ff';
+			break;
+		case 'foundation':
+			background = '#eee';
+			color = '#000';
+			break;
 		default:
-			background = '#F0F0F0';
-			color = '';
+			background = '#f0f0f0';
+			color = '#444';
 	}
 
 	var x = document.getElementsByTagName('pre');
