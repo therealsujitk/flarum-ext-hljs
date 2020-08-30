@@ -31,4 +31,4 @@ composer update therealsujitk/flarum-ext-hljs
 - [Packagist](https://packagist.org/packages/therealsujitk/flarum-ext-hljs)
 - [Discussion Page](https://discuss.flarum.org/d/23229)
 - [GitHub](https://therealsuji.tk)
-- [PayPal](https://thereasuji.tk/donate)
+- [PayPal](https://therealsuji.tk/donate)
