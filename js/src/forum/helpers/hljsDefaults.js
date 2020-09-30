@@ -24,11 +24,11 @@ export function hljsDefaults(theme, baseUrl) {
 			break;
 		case 'arduino-light':
 			background = '#fff';
-			color = '';
+			color = '#434f54';
 			break;
 		case 'arta':
 			background = '#222';
-			color = '';
+			color = '#aaa';
 			break;
 		case 'ascetic':
 			background = '#fff';
@@ -231,7 +231,7 @@ export function hljsDefaults(theme, baseUrl) {
 			color = '#84613d';
 			break;
 		case 'lightfair':
-			background = '';
+			background = '#fff';
 			color = '#444';
 			break;
 		case 'lioshi':
