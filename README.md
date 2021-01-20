@@ -14,8 +14,6 @@ A [Flarum](http://flarum.org) extension that integrates your forum with [highlig
 
 ### Installation
 
-Use [Bazaar](https://discuss.flarum.org/d/5151-flagrow-bazaar-the-extension-marketplace) or install manually with composer:
-
 ```sh
 composer require therealsujitk/flarum-ext-hljs
 ```
@@ -30,5 +28,4 @@ composer update therealsujitk/flarum-ext-hljs
 
 - [Packagist](https://packagist.org/packages/therealsujitk/flarum-ext-hljs)
 - [Discussion Page](https://discuss.flarum.org/d/23229)
-- [GitHub](https://therealsuji.tk/extensions/flarum-ext-hljs)
-- [PayPal](https://therealsuji.tk/donate)
+- [GitHub](https://github.com/therealsujitk/flarum-ext-hljs)

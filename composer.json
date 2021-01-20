@@ -2,17 +2,28 @@
   "name": "therealsujitk/flarum-ext-hljs",
   "description": "Integrate your forum with highlight.js.",
   "keywords": [
-    "flarum"
+    "highlight.js",
+    "hljs",
+    "code",
+    "syntax",
+    "highlighting"
   ],
   "type": "flarum-extension",
   "license": "MIT",
+  "support": {
+    "issues": "https://github.com/therealsujitk/flarum-ext-hljs/issues",
+    "source": "https://github.com/therealsujitk/flarum-ext-hljs",
+    "forum": "https://discuss.flarum.org/d/23229"
+  },
+  "homepage": "https://therealsuji.tk",
   "require": {
-    "flarum/core": "^0.1.0-beta.8"
+    "flarum/core": "^0.1.0-beta.15"
   },
   "authors": [
     {
       "name": "Sujit Kumar",
-      "role": "Developer"
+      "role": "Developer",
+      "email": "me@therealsuji.tk"
     }
   ],
   "autoload": {
@@ -23,15 +34,13 @@
   "extra": {
     "flarum-extension": {
       "title": "highlight.js",
+      "category": "formatting",
       "icon": {
         "image": "icon.svg",
         "backgroundColor": "#ff9c59",
         "backgroundSize": "cover",
         "backgroundPosition": "center"
       }
-    },
-    "flagrow": {
-      "discuss": "https://discuss.flarum.org/d/23229"
     }
   }
 }
