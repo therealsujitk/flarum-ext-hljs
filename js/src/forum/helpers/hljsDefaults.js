@@ -392,9 +392,18 @@ export function hljsDefaults(theme, baseUrl) {
     }
 
     var x = document.getElementsByTagName('pre');
-    for(var i=0; i<x.length; ++i)
-        x[i].style = 'background: ' + background + ';';
 
+    var code_language;
+    
+    for(var i=0; i<x.length; ++i) {
+        x[i].style = 'background: ' + background + ';' + 'color: ' + color;
+
+        code_language = x[i].getElementsByTagName('code').item(0).result.language;
+        if(code_language != "properties"){
+            x[i].classList.add("language-" + code_language);
+        }
+    }
+    
     x = document.getElementsByTagName('code');
     for(var i=0; i<x.length; ++i)
         x[i].style = 'color: ' + color + ';';
