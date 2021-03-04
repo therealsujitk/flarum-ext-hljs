@@ -392,19 +392,51 @@ export function hljsDefaults(theme, baseUrl) {
     }
 
     var x = document.getElementsByTagName('pre');
-
-    var code_language;
-    
-    for(var i=0; i<x.length; ++i) {
+    for(var i=0; i<x.length; ++i)
         x[i].style = 'background: ' + background + ';' + 'color: ' + color;
 
-        code_language = x[i].getElementsByTagName('code').item(0).result.language;
-        if(code_language != "properties"){
-            x[i].classList.add("language-" + code_language);
-        }
-    }
-    
     x = document.getElementsByTagName('code');
     for(var i=0; i<x.length; ++i)
         x[i].style = 'color: ' + color + ';';
+
+    // Wait until the DOM operation is finished before executing
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+    var elements = document.querySelectorAll('pre code');
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type == "attributes" & mutation.target.parentElement.localName == "pre") {
+                console.log('mm', new Date().getTime());
+                console.log(mutation.target.parentElement.localName,"attributes changed", mutation.attributeName);
+                hljs();
+            }
+        });
+    });
+
+    elements.forEach(function(element){
+        observer.observe(element, {
+            attributes: true, //configure it to listen to attribute changes
+            attributeFilter: ['class'] //only listen to class
+        });
+    })
+
+    var pres = document.getElementsByTagName('pre');    
+    var code_language;
+    function hljs(){
+        for(var i=0; i<pres.length; ++i) {
+            // console.log("enter: for");
+            if(pres[i].className==""){
+                try {
+                    // console.log("enter: try");
+                    code_language = pres[i].getElementsByTagName('code').item(0).result.language;
+                    if(code_language != "properties"){
+                        // console.log("enter: set code_language");
+                        pres[i].classList.add("language-" + code_language);
+                    }
+                } catch (error) {
+                    console.log(error);
+                    continue;
+                }
+            }
+        }
+    }
 }
