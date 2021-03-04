@@ -423,7 +423,7 @@ export function hljsDefaults(theme, baseUrl) {
             if(pres[i].className==""){
                 try {
                     code_language = pres[i].getElementsByTagName('code').item(0).result.language;
-                    if(code_language != "properties"){
+                    if(code_language != "properties" && code_language != undefined && code_language != ""){
                         pres[i].classList.add("language-" + code_language);
                     }
                 } catch (error) {
