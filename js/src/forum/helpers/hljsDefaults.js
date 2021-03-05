@@ -1,3 +1,6 @@
+import { codeLang } from "./codeLang";
+import {doClipboard} from "./doClipboard";
+
 export function hljsDefaults(theme, baseUrl) {
     var background, color;
 
@@ -398,38 +401,7 @@ export function hljsDefaults(theme, baseUrl) {
     x = document.getElementsByTagName('code');
     for(var i=0; i<x.length; ++i)
         x[i].style = 'color: ' + color + ';';
-
-    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-    var elements = document.querySelectorAll('pre code');
-    var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.type == "attributes") {
-                show_language();
-            }
-        });
-    });
-
-    elements.forEach(function(element){
-        observer.observe(element, {
-            attributes: true,
-            attributeFilter: ['class']
-        });
-    })
-
-    var pres = document.getElementsByTagName('pre');    
-    var code_language;
-    function show_language(){
-        for(var i=0; i<pres.length; ++i) {
-            if(pres[i].className==""){
-                try {
-                    code_language = pres[i].getElementsByTagName('code').item(0).result.language;
-                    if(code_language != "properties" && code_language != undefined && code_language != ""){
-                        pres[i].classList.add("language-" + code_language);
-                    }
-                } catch (error) {
-                    continue;
-                }
-            }
-        }
-    }
+    
+    codeLang();
+    doClipboard();
 }

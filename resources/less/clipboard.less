@@ -1,0 +1,101 @@
+pre.copy-ready{
+	position: relative;
+}
+.clipboard {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	display: flex;
+	padding: 8px;
+	z-index: 1;
+	font-family: inherit;
+	font-weight: 600;
+	line-height: 20px;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	border-radius: 6px;
+	appearance: none;
+	text-decoration: none;
+	text-align: center;
+	font-size: 14px;
+	color: rgb(36, 41, 46);
+	background-color: rgb(250, 251, 252);
+	border: 1px solid rgba(27, 31, 35, 0.12);
+	box-shadow: rgba(27,31,35,4%) 0px 1px 0px, rgba(255,255,255,25%) 0px 2px 0px inset;
+	opacity: 0;
+	-webkit-transition:opacity .3s ease-in-out;
+    -o-transition:opacity .3s ease-in-out;
+    transition:opacity .3s ease-in-out;
+}
+.clipboard[disabled] .clippy {
+    opacity:.3
+}
+
+.clipboard:hover {
+	background-color: rgb(243, 244, 246);
+	box-shadow: rgba(209,213,218,20%) 0px 1px 0px, rgba(255,255,255,10%) 0px 2px 0px inset;
+}
+button.clipboard:focus {
+    border-color: transparent;
+    box-shadow: rgba(3,102,214,30%) 0px 0px 0px 3px;
+    outline: none;
+}
+.clipboard:active {
+    background-color: rgb(237, 239, 242);
+    box-shadow: rgba(149,157,165,10%) 0px 2px 0px inset;
+    border-color: rgb(209, 213, 218);
+}
+pre:hover .clipboard,
+pre .clipboard:focus {
+    opacity:1
+}
+
+.clipboard-icon path {
+    fill-rule: evenodd;
+	color: rgb(106, 115, 125);
+    d: path("M 5.75 1 a 0.75 0.75 0 0 0 -0.75 0.75 v 3 c 0 0.414 0.336 0.75 0.75 0.75 h 4.5 a 0.75 0.75 0 0 0 0.75 -0.75 v -3 a 0.75 0.75 0 0 0 -0.75 -0.75 h -4.5 Z m 0.75 3 V 2.5 h 3 V 4 h -3 Z m -2.874 -0.467 a 0.75 0.75 0 0 0 -0.752 -1.298 A 1.75 1.75 0 0 0 2 3.75 v 9.5 c 0 0.966 0.784 1.75 1.75 1.75 h 8.5 A 1.75 1.75 0 0 0 14 13.25 v -9.5 a 1.75 1.75 0 0 0 -0.874 -1.515 a 0.75 0.75 0 1 0 -0.752 1.298 a 0.25 0.25 0 0 1 0.126 0.217 v 9.5 a 0.25 0.25 0 0 1 -0.25 0.25 h -8.5 a 0.25 0.25 0 0 1 -0.25 -0.25 v -9.5 a 0.25 0.25 0 0 1 0.126 -0.217 Z");
+}
+
+.clipboard.succeed,
+.clipboard.failed{
+	border-color: transparent;
+    box-shadow: rgba(3,102,214,30%) 0px 0px 0px 3px;
+    outline: none;
+}
+
+.clipboard.succeed path {
+    fill-rule: evenodd;
+	color: rgb(40, 167, 69);
+    d: path("M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z");
+}
+.clipboard.failed path{
+	fill-rule: evenodd;
+	color: rgb(203, 36, 49);
+	d: path("M 3.72 3.72 a 0.75 0.75 0 0 1 1.06 0 L 8 6.94 l 3.22 -3.22 a 0.75 0.75 0 1 1 1.06 1.06 L 9.06 8 l 3.22 3.22 a 0.75 0.75 0 1 1 -1.06 1.06 L 8 9.06 l -3.22 3.22 a 0.75 0.75 0 0 1 -1.06 -1.06 L 6.94 8 L 3.72 4.78 a 0.75 0.75 0 0 1 0 -1.06 Z");
+}
+
+pre.copy-ready:hover:before{
+	right: 50px;
+}
+pre.copy-ready:hover code{
+	padding-right: 26px;
+}
+
+@media screen and (max-width: 768px){
+	pre[class*=language-] {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	pre .clipboard {
+		opacity: 1;
+	}
+	pre.copy-ready:before{
+		right: 50px;
+	}
+	pre.copy-ready code,
+	pre.copy-ready:hover code{
+		padding-right: 34px;
+	}
+}

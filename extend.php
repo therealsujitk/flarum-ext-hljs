@@ -13,11 +13,15 @@ namespace Therealsujitk\Hljs;
 
 use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;
+use Flarum\Frontend\Document;
 
 return [
     (new Extend\Frontend('forum'))
         ->js(__DIR__.'/js/dist/forum.js')
-        ->css(__DIR__ . '/resources/less/colang.min.less'),      
+        ->css(__DIR__ .'/resources/less/forum.less')
+        ->content(function (Document $document){
+            $document->head[] = '<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>';
+        }),
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js'),
     new Extend\Locales(__DIR__ . '/resources/locale'),

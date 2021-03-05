@@ -1,15 +1,17 @@
 pre[class*=language-] {
     position: relative;
-    padding: 20px 24px; 
+    padding: 21px 24px; 
 }
 
 pre[class*=language-]:before {
     font-family: source-code-pro, Monaco, Consolas, "Courier New", monospace;
     position: absolute;
-    z-index: 3;
-    top: 0.8em;
-    right: 1em;
+    z-index: 1;
+    top: 8px;
+    right: 10px;
     font-size: .75rem;
+	opacity: 0.4;
+	line-height: 1em;
 }
 
 pre[class~=language-apacheconf]:before {
