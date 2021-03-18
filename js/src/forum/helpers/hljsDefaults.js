@@ -393,9 +393,9 @@ export function hljsDefaults(theme, baseUrl) {
 
     var x = document.getElementsByTagName('pre');
     for(var i=0; i<x.length; ++i)
-        x[i].style = 'background: ' + background + ';';
+        x[i].style = 'background: ' + background + ';color:' + color;
 
     x = document.getElementsByTagName('code');
     for(var i=0; i<x.length; ++i)
-        x[i].style = 'color: ' + color + ';';
+        x[i].style = 'background: ' + background + ';color:' + color;
 }

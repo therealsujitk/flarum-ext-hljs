@@ -23,4 +23,6 @@ return [
     function (Dispatcher $dispatcher) {
         $dispatcher->subscribe(Listeners\SaveSettings::class);
     },
+    (new Extend\Settings())
+        ->serializeToForum('theme_name', 'therealsujitk-hljs.theme_name')
 ];
