@@ -1,7 +1,7 @@
-import {extend} from 'flarum/extend';
-import app from 'flarum/app';
+import {extend} from 'flarum/common/extend';
+import app from 'flarum/common/app';
 
-import CommentPost from 'flarum/components/CommentPost';
+import CommentPost from 'flarum/forum/components/CommentPost';
 import {hljsDefaults} from './helpers/hljsDefaults'
 
 var flag = 1;
@@ -12,7 +12,7 @@ app.initializers.add('therealsujitk/flarum-ext-hljs', () => {
             m('null', {
                 id: 'therealsujitk-hljs',
                 oncreate: () => {
-                    var hljsTheme = app.forum.attribute('therealsujitk-hljs.theme_name');
+                    var hljsTheme = app.forum.attribute('theme_name');
 
                     if(hljsTheme === null || hljsTheme === "")
                         hljsTheme = 'default';
