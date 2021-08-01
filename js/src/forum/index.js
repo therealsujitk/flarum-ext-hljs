@@ -12,10 +12,7 @@ app.initializers.add('therealsujitk/flarum-ext-hljs', () => {
             m('null', {
                 id: 'therealsujitk-hljs',
                 oncreate: () => {
-                    var hljsTheme = app.forum.attribute('therealsujitk-hljs.theme_name');
-
-                    if(hljsTheme === null || hljsTheme === "")
-                        hljsTheme = 'default';
+                    var hljsTheme = app.forum.attribute('therealsujitk-hljs.theme_name') || 'default';
                     
                     var counter = 0;
                     var hljs = setInterval(function() {
